@@ -1,0 +1,53 @@
+<h2>Bug Tracker</h2>
+
+<h3>Create New Ticket</h3>
+<form (ngSubmit)="onCreateTicket()">
+  <input [(ngModel)]="newTicket.title" name="title" placeholder="Title" required />
+  <input [(ngModel)]="newTicket.description" name="description" placeholder="Description" />
+
+  <select [(ngModel)]="newTicket.status" name="status">
+    <option value="TODO">To Do</option>
+    <option value="IN_PROGRESS">In Progress</option>
+    <option value="RESOLVED">Resolved</option>
+  </select>
+
+  <select [(ngModel)]="newTicket.priority" name="priority">
+    <option value="LOW">Low</option>
+    <option value="MEDIUM">Medium</option>
+    <option value="HIGH">High</option>
+  </select>
+
+  <button type="submit">Create Ticket</button>
+</form>
+
+<h3>All Tickets</h3>
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Priority</th>
+    <th>Created</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let ticket of tickets">
+    <td>{{ ticket.title }}</td>
+    <td>{{ ticket.description }}</td>
+    <td>
+        <select [(ngModel)]="ticket.status" name="status-{{ticket.id}}" (change)="onUpdateTicket(ticket)">
+        <option value="TODO">To Do</option>
+        <option value="IN_PROGRESS">In Progress</option>
+        <option value="RESOLVED">Resolved</option>
+        </select>
+    </td>
+    <td>
+        <select [(ngModel)]="ticket.priority" name="priority-{{ticket.id}}" (change)="onUpdateTicket(ticket)">
+        <option value="LOW">Low</option>
+        <option value="MEDIUM">Medium</option>
+        <option value="HIGH">High</option>
+        </select>
+    </td>
+    <td>{{ ticket.createdAt }}</td>
+    <td><button (click)="onDeleteTicket(ticket.id)">Delete</button></td>
+    </tr>
+</table>
