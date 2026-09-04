@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: bugtracker-db
+    environment:
+      POSTGRES_DB: bugtracker
+      POSTGRES_USER: bugtracker_user
+      POSTGRES_PASSWORD: bugtracker_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
