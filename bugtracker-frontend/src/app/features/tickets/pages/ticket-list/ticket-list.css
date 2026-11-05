@@ -1,0 +1,144 @@
+:host {
+  display: block;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  background: #f3f4f6;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 4px 0 24px;
+  color: #6b7280;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+/* Form */
+.ticket-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.field {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.title-field {
+  flex: 1 1 200px;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-delete {
+  background: transparent;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.btn-delete:hover {
+  background: #fef2f2;
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ticket-table th {
+  text-align: left;
+  padding: 10px;
+  color: #6b7280;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ticket-table td {
+  padding: 10px;
+  border-bottom: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+
+.title-cell {
+  font-weight: 600;
+}
+
+.desc-cell {
+  color: #4b5563;
+  max-width: 260px;
+}
+
+.date-cell {
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.empty {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Status and priority pills */
+.pill {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.status-TODO        { background: #f3f4f6; color: #374151; }
+.status-IN_PROGRESS { background: #dbeafe; color: #1e40af; }
+.status-RESOLVED    { background: #dcfce7; color: #166534; }
+
+.priority-LOW    { background: #f3f4f6; color: #374151; }
+.priority-MEDIUM { background: #fef3c7; color: #92400e; }
+.priority-HIGH   { background: #fee2e2; color: #991b1b; }

@@ -2,6 +2,7 @@ package com.bugtracker.bugtracker.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,8 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Title is required/Can't Submit Blank")
+    @NotBlank(message = "Title is required, can't submit Blank")
+    @Size(max = 100, message = "Title must be 100 characters or less")
     private String title;
 
     @Column(length = 1000)
